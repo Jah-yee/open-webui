@@ -22,6 +22,7 @@ from fastapi.concurrency import run_in_threadpool
 import aiohttp
 import certifi
 import validators
+import requests
 from langchain_community.document_loaders import PlaywrightURLLoader, WebBaseLoader
 from langchain_community.document_loaders.base import BaseLoader
 from langchain_core.documents import Document
