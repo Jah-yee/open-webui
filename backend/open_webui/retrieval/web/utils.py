@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import requests
 import socket
 import ssl
 import urllib.parse
