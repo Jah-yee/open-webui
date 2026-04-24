@@ -169,7 +169,11 @@ async def search_web(
         user = UserModel(**__user__) if __user__ else None
 
         # Enforce maximum result count from config to prevent abuse
-        count = count if count < __request__.app.state.config.WEB_SEARCH_RESULT_COUNT else __request__.app.state.config.WEB_SEARCH_RESULT_COUNT
+        count = (
+            count
+            if count < __request__.app.state.config.WEB_SEARCH_RESULT_COUNT
+            else __request__.app.state.config.WEB_SEARCH_RESULT_COUNT
+        )
 
         results = await asyncio.to_thread(_search_web, __request__, engine, query, user)
 
